@@ -40,3 +40,4 @@ README.md
 ```
 .env
 dist
+auth

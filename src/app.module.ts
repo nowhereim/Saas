@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { UsersModule } from './api/users/users.module';
 import { AssetsModule } from './api/assets/assets.module';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './api/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { DB } from './api/config/postgrepsql.config';
 import { TypeOrmModule } from '@nestjs/typeorm';

@@ -19,6 +19,7 @@ import { Status } from './entities/status.entity';
       User,
       Category,
       Status,
+      User,
     ]),
   ],
   controllers: [AssetsController],

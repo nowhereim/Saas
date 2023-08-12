@@ -1,16 +1,14 @@
 import {
   Column,
   Entity,
+  Index,
   JoinColumn,
-  ManyToMany,
   ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Category } from './category.entity';
 import { User } from 'src/api/users/entities/user.entity';
-import { Company } from './company.entity';
 import { Status } from './status.entity';
 @Entity()
 export class Asset {
@@ -34,8 +32,9 @@ export class Asset {
 
   // @IsNotEmpty()
   // @IsNumber()
-  @ManyToOne(() => Company, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
+  @ManyToOne(() => User, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
   @JoinColumn({ name: 'identifier', referencedColumnName: 'id' })
+  @Index()
   identifier: number;
 
   @Column({ nullable: true })
